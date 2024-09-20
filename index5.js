@@ -106,7 +106,7 @@ function calculate() {
 function checkoutPage() {
     const checkoutButton = document.querySelector(".checkout");
     checkoutButton.addEventListener("click", function () {
-        window.location.href = "";
+        window.location.href = "adres.html";
     })
 }
 
