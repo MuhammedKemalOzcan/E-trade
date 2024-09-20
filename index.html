@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js" defer></script>
+    <style>
+        .container {
+            width: 100%;
+            /*bütün ekranı kapla*/
+            height: 2000px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar {
+            width: 100%;
+            /*ekran boyutunun %80'ini kaplar her durumda*/
+            height: 88px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            /*yükseklik olarak ortalar*/
+        }
+
+        .largemenu {
+            width: 100%;
+            height: 88px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search {
+            width: 372px;
+            height: 40px;
+            margin-left: 63px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            opacity: 0.5;
+            border-radius: 8px;
+            background-color: #F5F5F5;
+        }
+
+        .link {
+            width: 10%;
+            height: 88px;
+            text-decoration: none;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img {
+            margin-right: 160px;
+            margin-left: 50px;
+        }
+
+        .hero {
+            width: 100%;
+            height: 780px;
+            background-color: #211C24;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content {
+            width: 100%;
+            height: 1672px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+
+        }
+
+        .logo {
+            width: 65px;
+            height: 22px;
+            background-color: white;
+            margin-left: 16px;
+        }
+
+        .menu {
+            width: 40px;
+            height: 40px;
+            margin-left: 70%;
+        }
+
+        .heroinfo {
+            width: 80%;
+            height: 344px;
+            margin-top: 88px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .heroinfo h2 {
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 32px;
+        }
+
+        .heroinfo h1 {
+            font-size: 72px;
+            line-height: 72px;
+            color: white;
+        }
+
+        .span {
+            display: block;
+            /*alt satıra atmak için*/
+            margin-top: 20px;
+            margin-left: 100px;
+            font-size: 72px;
+            font-weight: 600;
+            line-height: 32px;
+            color: white;
+        }
+
+        .heroinfo p {
+            font-size: 19px;
+            line-height: 24px;
+            color: white;
+        }
+
+        .span2 {
+            display: block;
+            margin-left: 60px;
+        }
+
+        .heroinfo button {
+            width: 184px;
+            color: white;
+            height: 56px;
+            background-color: transparent;
+            border-radius: 6px;
+            padding: 16px;
+        }
+
+        .heroinfo2 {
+            width: 80%;
+            height: 344px;
+            margin-top: 48px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo1 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 40px;
+        }
+
+        .photo1 h2 {
+            color: #000000;
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 40px;
+            margin-top: 24px;
+            margin-bottom: 0px;
+        }
+
+        .photo1 p {
+            margin-top: 8px;
+            color: #909090;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .photo1 span {
+            font-weight: 500;
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 40px;
+            font-weight: bold;
+        }
+
+        .photo2 {
+            width: 100%;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #353535;
+        }
+
+        .photo2 h2 {
+            color: #FFFFFF;
+            font-size: 32px;
+            line-height: 34px;
+            font-weight: 300;
+            margin-top: 24px;
+            margin-bottom: 0px;
+        }
+
+        .photo2 span {
+            font-weight: 700;
+            color: #FFFFFF;
+            font-size: 32px;
+            line-height: 34px;
+        }
+
+        .photo2 p {
+            color: #909090;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 40px;
+        }
+
+        .photo3 {
+            width: 100%;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .photo3 h2 {
+            font-weight: 300;
+            font-size: 34px;
+            line-height: 40px;
+            margin-bottom: 8px;
+            margin-top: 24px;
+        }
+
+        .photo3 p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            margin-top: 8px;
+            color: #909090;
+        }
+
+        .photo3 span {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            display: block;
+            color: #909090;
+        }
+
+        .experience {
+            text-align: center;
+        }
+
+        .photo4 {
+            width: 100%;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            background-color: #EDEDED;
+        }
+
+        .photo4 h2 {
+            font-weight: 300;
+            font-size: 34px;
+            line-height: 40px;
+            margin-top: 24px;
+            margin-bottom: 0px;
+            color: #000000;
+        }
+
+        .macbook {
+            font-weight: 500;
+            font-size: 34px;
+            line-height: 40px;
+            color: #000000;
+        }
+
+        .photo4 p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: #909090;
+        }
+
+        .photo4 button {
+            border-radius: 6px;
+            width: 80%;
+            height: 56px;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            margin-bottom: 40px;
+        }
+
+        .s1 {
+            display: block;
+        }
+
+        .s2 {
+            display: block;
+            text-align: center;
+        }
+
+        .categories {
+            width: 100%;
+            height: 624px;
+            background-color: #FAFAFA;
+        }
+
+        .browse {
+            display: flex;
+        }
+
+        .arrow {
+            width: 80px;
+            height: 32px;
+            margin-top: 64px;
+            margin-left: 150px;
+        }
+
+        .browse h1 {
+            margin-top: 64px;
+            margin-left: 16px;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 32px;
+        }
+
+        .cards {
+            width: 80%;
+            height: 416px;
+            margin-top: 48px;
+            margin-left: 60px;
+        }
+
+        .cards button {
+            width: 164px;
+            height: 128px;
+            border-radius: 15px;
+            margin-right: 16px;
+            margin-bottom: 16px;
+        }
+
+        .cards p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: #000000;
+        }
+
+        .products {
+            width: 100%;
+            height: 1632px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tags {
+            width: 100%;
+            height: 32px;
+            margin-top: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tags p {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-right: 60px;
+            margin-left: 30px;
+            text-align: center;
+            white-space: nowrap;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 32px;
+            color: #000000;
+        }
+
+        .pair {
+            width: 80%;
+            height: 352px;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 32px;
+        }
+
+        .productcard1,
+        .productcard2,
+        .productcard3,
+        .productcard5,
+        .productcard6,
+        .productcard7,
+        .productcard8 {
+            width: 50%;
+            height: 352px;
+            background-color: #F6F6F6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 32px;
+            margin-top: 32px;
+            border-radius: 9px;
+        }
+
+        .pair p {
+            margin-top: 8px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        .buynow {
+            background-color: #000000;
+            color: #FFFFFF;
+            border-radius: 8px;
+            width: 140px;
+            height: 48px;
+            margin-bottom: 24px;
+        }
+
+        .Like {
+            margin-left: 120px;
+            margin-top: 24px;
+            margin-right: 12px;
+        }
+
+        .productcard4 {
+            width: 50%;
+            height: 352px;
+            background-color: #F6F6F6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 32px;
+            margin-top: 32px;
+            border-radius: 9px;
+        }
+
+        .productcard4 p {
+            margin-bottom: 26px;
+        }
+
+        .pair span {
+            display: block;
+        }
+
+        .bigbanner {
+            width: 100%;
+            height: 712px;
+            background-color: #F9F9F9;
+            margin-top: 106px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popularproducts {
+            display: none;
+        }
+
+        .samsunggalaxy {
+            display: none;
+        }
+
+        .macbookpro {
+            display: none;
+        }
+        .ipadpro2 {
+            display: none;
+        }
+
+        .ipad {
+            margin-left: 70px;
+        }
+
+        .dots {
+            margin-top: 48px;
+        }
+
+        .bigbanner h2 {
+            font-weight: 300;
+            font-size: 49px;
+            line-height: 48px;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .bigbanner p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            text-align: center;
+            color: #909090;
+        }
+
+        .bigbanner span {
+            display: block;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        .bigbanner button {
+            width: Hug (184px)px;
+            height: Hug (56px)px;
+            padding: 16px 56px 16px 56px;
+            gap: 8px;
+            border-radius: 6px;
+            border: 1px 0px 0px 0px;
+            opacity: 0px;
+            margin-top: 16px;
+            margin-left: 120px;
+            color: #000000;
+        }
+
+        .discountheading {
+            margin-top: 56px;
+            margin-right: 130px;
+            margin-bottom: 32px;
+        }
+
+        .row{
+            display: none;
+        }
+        .banner {
+            width: 100%;
+            height: 600px;
+            background: linear-gradient(to right, #2E2E2E, #000000);
+        }
+
+        .bannercontent {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .bannercontent h1 {
+            font-weight: 200;
+            font-size: 48px;
+            line-height: 72px;
+            margin-top: 104px;
+            margin-bottom: 0px;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bannercontent p {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 32px;
+            color: #787878;
+            margin-top: 0px;
+            margin-bottom: 40px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .bannercontent span {
+            display: block;
+        }
+
+        .bannercontent button {
+            width: 184px;
+            height: 56px;
+            border-radius: 6px;
+            border: 1px solid #FFFFFF;
+            background-color: transparent;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 125px;
+        }
+
+        .upperphotos {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .screen {
+            display: flex;
+            align-items: start;
+            justify-content: start;
+        }
+
+        .purplephone {
+            margin-left: 65px;
+        }
+
+        .lowerphotos {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .watch {
+            margin-left: 250px;
+        }
+
+        .footer {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #181313
+        }
+
+        .footer img {
+            margin-top: 48px;
+        }
+
+        .footer p {
+            font-weight: 400;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 32px;
+            margin-bottom: 8px;
+            text-align: center;
+            color: #CFCFCF;
+
+        }
+
+        .footer span {
+            display: block;
+        }
+
+        .footer h2 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 16px;
+            color: #FFFFFF;
+            margin-top: 32px;
+            margin-bottom: 8px;
+        }
+
+        .socials {
+            width: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .socials img {
+            margin-left: 26px;
+        }
+
+
+
+        /*Media quer'leri: 600 px'den büyükse ekran aşağıdaki stiller geçerli olur.*/
+        @media (min-width:600px) {
+            .menu {
+                display: none;
+            }
+
+            .logo {
+                margin-left: 160px;
+            }
+
+            .hero {
+                width: 100%;
+                height: 632px;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .heroinfo {
+                width: 714px;
+                height: 256px;
+                display: flex;
+                flex-direction: column;
+                margin: 160px;
+                box-sizing: border-box;
+            }
+
+            .heroinfo h2 {
+                width: 100%;
+                height: 32px;
+                margin: 0px;
+            }
+
+            .heroinfo h1 {
+                width: 100%;
+                height: 72px;
+                margin-top: 0px;
+                margin-bottom: 24px;
+                display: flex;
+            }
+
+            .span {
+                margin-left: 15px;
+                text-align: center;
+            }
+
+            .span2 {
+                margin-left: 5px;
+                text-align: center;
+            }
+
+            .heroinfo p {
+                width: 100%;
+                height: 24px;
+                display: flex;
+                margin-top: 0px;
+            }
+
+            .heroinfo button {
+                margin-right: 530px;
+            }
+
+            .heroinfo2 {
+                width: 35%;
+                height: 80%;
+                margin-right: 160px;
+            }
+
+            .content {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .bigdiv {
+                width: 50%;
+                height: 600px;
+                min-width: 600px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .upperdiv {
+                display: flex;
+                width: 100%;
+                height: 328px;
+                overflow: hidden;
+                background-color: #FFFFFF;
+            }
+
+            .upperdiv h2 {
+                font-size: 49px;
+                font-weight: 500;
+                line-height: 40px;
+                text-align: left;
+                margin-bottom: 0px;
+            }
+
+            .upperdiv p {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 24px;
+                text-align: left;
+                color: #909090;
+
+            }
+
+            .upperdiv img {
+                width: 360px;
+                height: 343px;
+            }
+
+            .lowerdiv {
+                width: 100%;
+                height: 272px;
+                display: flex;
+                flex-direction: row;
+                background-color: #EDEDED;
+            }
+
+            .lowerleft {
+                width: 50%;
+                height: 272px;
+                display: flex;
+                background-color: #EDEDED;
+            }
+
+            .lefttext {
+                margin-top: 68px;
+                margin-left: 48px;
+            }
+
+            .lefttext h2 {
+                font-size: 29px;
+                font-weight: 300;
+                line-height: 40px;
+                text-align: left;
+                color: #000000;
+                margin-bottom: 0px;
+            }
+
+            .lefttext span {
+                font-size: 29px;
+                font-weight: 300;
+                line-height: 40px;
+                text-align: left;
+                color: #000000;
+            }
+
+            .lefttext p {
+                font-family: SF Pro Display;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 24px;
+                text-align: left;
+                color: #909090;
+                margin-top: 0px;
+            }
+
+            .lowerright {
+                width: 50%;
+                height: 272px;
+                display: flex;
+                background-color: #353535;
+            }
+
+            .righttext {
+                margin-top: 64px;
+                margin-left: 16px;
+            }
+
+            .righttext h2 {
+                font-family: SF Pro Display;
+                font-size: 29px;
+                font-weight: 300;
+                line-height: 40px;
+                text-align: left;
+                color: #FFFFFF;
+                margin-bottom: 0px;
+            }
+
+            .righttext span {
+                font-family: SF Pro Display;
+                font-size: 29px;
+                font-weight: 500;
+                line-height: 40px;
+                text-align: left;
+                color: #FFFFFF;
+            }
+
+            .righttext p {
+                margin-top: 0px;
+                font-family: SF Pro Display;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 24px;
+                text-align: left;
+                color: #909090;
+            }
+
+            .bigdiv2 {
+                width: 50%;
+                height: 600px;
+                background-color: #EDEDED;
+                min-width: 600px;
+
+            }
+
+            .bigdiv2 img {
+                float: right;
+                margin-top: 49px;
+            }
+
+            .mactext {
+                margin-left: 56px;
+                margin-top: 204px;
+            }
+
+            .mactext h2 {
+                font-family: SF Pro Display;
+                font-size: 64px;
+                font-weight: 200;
+                line-height: 56px;
+                text-align: left;
+                color: #000000;
+                margin-bottom: 0px;
+            }
+
+            .mactext p {
+                font-family: SF Pro Display;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 24px;
+                text-align: left;
+                color: #909090;
+
+            }
+
+            .btn {
+                width: 184px;
+                height: 56px;
+                border-radius: 6px;
+                border: 1px solid #000000
+            }
+
+            .browse {
+                margin-left: 160px;
+            }
+
+            .arrow {
+                margin-left: 1200px;
+            }
+
+            .cards {
+                margin-left: 170px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .tags {
+                margin-top: 20px;
+                display: flex;
+                justify-content: left;
+            }
+
+            .pair {
+                display: flex;
+                gap: 0;
+            }
+
+            .dortlu {
+                display: flex;
+                flex-direction: row;
+                gap: 0;
+            }
+
+            .bigbanner {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .popularproducts {
+                width: 25%;
+                height: 640px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .images {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 360px;
+                height: 327px;
+                margin-top: 22px;
+                position: relative;
+            }
+
+            .image12 {
+                position: absolute;
+                width: 165px;
+                height: 187px;
+                margin-left: 100px;
+
+            }
+
+            .image39 {
+                width: 300px;
+                height: 300px;
+            }
+
+            .ipadpro1 {
+                display: none;
+            }
+
+            .ipadpro2 {
+                display: flex;
+                flex-direction: column;
+                width: 25%;
+                height: 640px;
+                background-color: #F9F9F9;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            .dots {
+                display: none;
+            }
+
+            .samsunggalaxy {
+                display: flex;
+                flex-direction: column;
+                width: 25%;
+                height: 640px;
+                background-color: #EAEAEA;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .macbookpro {
+                display: flex;
+                flex-direction: column;
+                width: 25%;
+                height: 640px;
+                background-color: #2C2C2C;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bigbanner h2 {
+                margin-top: 0px;
+            }
+
+            .shopnow {
+                width: Hug (184px)px;
+                height: Hug (56px)px;
+                padding: 16px 56px 16px 56px;
+                gap: 8px;
+                border-radius: 6px 0px 0px 0px;
+                border: 1px 0px 0px 0px;
+                opacity: 0px;
+
+            }
+
+            .text {
+                width: 296px;
+                height: 208px;
+                margin-right: 32px;
+                margin-top: 27px;
+                margin-bottom: 56px;
+            }
+
+            .text h2 {
+                font-family: SF Pro Display;
+                font-size: 33px;
+                font-weight: 300;
+                line-height: 48px;
+                text-align: left;
+            }
+
+            .text p {
+                font-family: SF Pro Display;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 24px;
+                text-align: left;
+
+                color: #909090;
+            }
+            .discountheading{
+                margin-left: 200px;
+            }
+            .row{
+                margin-left: 150px;
+                margin-right: 160px;
+                display: flex;
+            }
+            .productcard1, .productcard4{
+                width: 268px;
+                height: 432px;
+                margin-left: 60px;
+            }
+            .pair{
+                display: none;
+            }
+            
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="Logo.png" alt="">
+            </div>
+            <div class="menu">
+                <img src="Burger.png" alt="">
+            </div>
+        </div>
+
+        <div class="hero">
+            <div class="heroinfo">
+                <h2>Pro.Beyond.</h2>
+                <h1>Iphone 14 <span class="span">Pro</span></h1>
+                <p>Created to change everything for the <span class="span2">better.For everyone</span></p>
+                <button><a href="index2.html"> Shop Now</a></button>
+            </div>
+            <div class="heroinfo2">
+                <img src="Iphone Image.png" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <div class="photo1">
+                <img src="kulaklık.png" class="image1">
+                <h2>Apple Airpods <span>Max</span></h2>
+                <p>Computational audio.Listen,it's powerful</p>
+            </div>
+            <div class="photo2">
+                <img src="Vision.png">
+                <h2>Apple Vision <span>Pro</span></h2>
+                <p>An immersive way to experience entertainment</p>
+            </div>
+            <div class="photo3">
+                <img src="PlayStation.png">
+                <h2>Playstation 5</h2>
+                <p>
+                    incredibly powerful CPU's,GPU's,and an SSD with
+                    <span>integrated I/O will redefine your PlayStation</span>
+                    <span class="experience">experience.</span>
+                </p>
+            </div>
+            <div class="photo4">
+                <img src="MacBook Pro 14.png">
+                <h2><span class="macbook">Macbook</span> Air</h2>
+                <p>The new 15-inch MacBook Air makes room for
+                    <span class="s1">more of what you love with a spaciolus Liquid</span>
+                    <span class="s2">Retina display</span>
+                </p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+        <div class="categories">
+            <div class="browse">
+                <h1>Browse By Category</h1>
+                <img src="Arrow`s.png" class="arrow">
+            </div>
+            <div class="cards">
+                <button >
+                    <img src="Phones.png">
+                    <p>Phones</p>
+                </button>
+                <button>
+                    <img src="Smart Watches.png">
+                    <p>Smart Watches</p>
+                </button>
+                <button>
+                    <img src="Cameras.png">
+                    <p>Cameras</p>
+                </button>
+                <button>
+                    <img src="Headphones.png">
+                    <p>Headphones</p>
+                </button>
+                <button>
+                    <img src="Computers.png">
+                    <p>Computers</p>
+                </button>
+                <button>
+                    <img src="Gaming.png">
+                    <p>Gaming</p>
+                </button>
+            </div>
+
+        </div>
+        <div class="products">
+            <div class="tags">
+                <p>New Arrival</p>
+                <p>Bestseller</p>
+                <p>Featured Products</p>
+            </div>
+            <div class="dortlu">
+                <div class="pair">
+                    <div class="productcard1">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1.png">
+                        <p>Apple İphone 14 Pro Max 128GB Deep...</p>
+                        <p>$900</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                    <div class="productcard2">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (1).png">
+                        <p>Blackmagic Pocket Cinema Camera 6k</p>
+                        <p>$2535</p>
+                        <button class="buynow">Buy Now</button>
+
+                    </div>
+
+                </div>
+                <div class="pair">
+                    <div class="productcard3">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (7).png">
+                        <p>Apple Watch Series 9 GPS 41mm Starl...</p>
+                        <p>$399</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                    <div class="productcard4">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (6).png">
+                        <p>AirPods Max Silver</p>
+                        <p>$549</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="dortlu">
+                <div class="pair">
+                    <div class="productcard5">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (2).png">
+                        <p>Samsung Galaxy Watch6 Classic 4...</p>
+                        <p>$369</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+
+                    <div class="productcard6">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (3).png">
+                        <p>Galaxy Z Fold5 Unlocked | 256G...</p>
+                        <p>$1799</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                </div>
+
+                <div class="pair">
+                    <div class="productcard7">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (4).png">
+                        <p>Galaxy Buds FE <span>Graphite</span></p>
+                        <p>$99.99</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                    <div class="productcard8">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (5).png">
+                        <p>Apple iPaD 9 10.2" 64GB Wi-Fi Silver...</p>
+                        <p>$398</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="bigbanner">
+            <div class="popularproducts">
+                <div class="images">
+                    <img src="image 39.png" class="image39">
+                    <img src="image 12.png" class="image12">
+                </div>
+                <div class="text">
+                    <h2>Popular Products</h2>
+                    <p>iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and
+                        ease
+                        of use.</p>
+                    <button class="shopnow">Shop Now</button>
+                </div>
+
+            </div>
+            <div class="ipadpro1">
+                <img src="ipad.png" class="ipad">
+                <h2>Ipad Pro</h2>
+                <p>iPad combines a magnificent 10.2-inch Retina
+                    <span>display,incredible performance,multitasking and</span>
+                    <span>ease of use.</span>
+                </p>
+                <button class="shopnow">Shop Now</button>> 
+            </div>
+            <img src="Noktalar.png" class="dots">
+            <div class="ipadpro2">
+                <img src="image 64.png" class="ipad">
+                <div class="text">
+                    <h2>Ipad Pro</h2>
+                    <p>iPad combines a magnificent 10.2-inch Retina
+                        <span>display,incredible performance,multitasking and</span>
+                        <span>ease of use.</span>
+                    </p>
+                    <button class="shopnow">Shop Now</button>
+                </div>
+            </div>
+            <div class="samsunggalaxy">
+                <img src="image 41.png">
+                <div class="text">
+                    <h2>Samsung Galaxy</h2>
+                    <p>iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and
+                        ease of use.</p>
+                    <button>Shop Now</button>
+                </div>
+
+            </div>
+            <div class="macbookpro">
+                <img src="Macbook 1.png">
+                <div class="text">
+                    <h2>Macbook Pro</h2>
+                    <p>iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and
+                        ease of use.</p>
+                    <button class="shopnow">Shop Now</button>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="products">
+            <h1 class="discountheading">Discounts up to -50%</h1>
+
+                <div class="row">
+                    <div class="productcard1">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (8).png">
+                        <p>Apple iPhone 14 Pro 512GB Gold (MQ2...</p>
+                        <p>$900</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                    <div class="productcard1">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (6).png">
+                        <p>AirPods Max Silver</p>
+                        <p>$2535</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                    <div class="productcard4">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (7).png">
+                        <p>Apple Watch Series 9 GPS 41mm Starl...</p>
+                        <p>$399</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                    <div class="productcard1">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (9).png">
+                        <p>Apple iPhone 14 Pro 1TB Gold (MQ2V3)</p>
+                        <p>$549</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                </div>
+
+                <div class="pair">
+                    <div class="productcard1">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (8).png">
+                        <p>Apple iPhone 14 Pro 512GB Gold (MQ2...</p>
+                        <p>$900</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                    <div class="productcard1">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (6).png">
+                        <p>AirPods Max Silver</p>
+                        <p>$2535</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                </div>
+                <div class="pair">
+                    <div class="productcard4">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (7).png">
+                        <p>Apple Watch Series 9 GPS 41mm Starl...</p>
+                        <p>$399</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                    <div class="productcard1">
+                        <img src="Like.png" class="Like">
+                        <img src="Iphone 14 pro 1 (9).png">
+                        <p>Apple iPhone 14 Pro 1TB Gold (MQ2V3)</p>
+                        <p>$549</p>
+                        <button class="buynow">Buy Now</button>
+                    </div>
+                </div>
+            
+        </div>
+        <div class="banner">
+            <a href="index2.html"></a>
+            <div class="bannercontent">
+                <div class="upperphotos">
+                    <img src="screen.png" class="screen">
+                    <img src="gold.png">
+                    <img src="purplephone.png" class="purplephone">
+                </div>
+                <h1>Big Summer Sale</h1>
+                <p>Commodo fames vitae leo mauris in.Eu Consequat</p>
+                <Button>Shop Now</Button>
+                <div class="lowerphotos">
+                    <img src="bluephone.png">
+                    <img src="watch.png" class="watch">
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            <img src="Logo (2).png">
+            <p>We are residental interior design firm located in
+                <span>Portand. Our
+                    boutique-studio offers more than</span>
+            </p>
+            <h2>Services</h2>
+            <p>Bonus Program</p>
+            <p>Gift Cards</p>
+            <p>Credit and payment</p>
+            <p>service contracts</p>
+            <p>Non-cash account</p>
+            <p>Payment</p>
+            <h2>Asistance to the buyer</h2>
+            <p>Find an order</p>
+            <p>Terms of delivery</p>
+            <p>Exchange and return of goods</p>
+            <p>Guarantee</p>
+            <p>Frequently asked questions</p>
+            <p>Terms of use of the site</p>
+            <div class="socials">
+                <img src="Twitter.png">
+                <img src="Facebook.png">
+                <img src="Tiktok.png">
+                <img src="Instagram.png">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

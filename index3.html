@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index3.js" defer></script>
+    <title>Document</title>
+    <style>
+        .navbar {
+            width: 100%;
+            height: 88px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #B5B5B5;
+        }
+
+        .logo {
+            width: 65px;
+            height: 22px;
+            background-color: white;
+            margin-left: 16px;
+        }
+
+        .menu {
+            width: 40px;
+            height: 40px;
+            margin-left: 70%;
+        }
+
+        .back {
+            width: 80%;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            margin-top: 44px;
+            margin-left: 16px;
+        }
+
+        .arrow {
+            background-color: white;
+            border-radius: 0px;
+        }
+
+        .back p {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 32px;
+            letter-spacing: 0.01em;
+            text-align: left;
+            margin-left: 32px;
+            color: #000000;
+        }
+
+        .dropdown-container {
+            width: 95%;
+            height: 172px;
+            margin: 24px;
+        }
+
+        .dropdown-header {
+            width: 95%;
+            height: 48px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: 0.03em;
+            text-align: left;
+            color: #000000;
+            cursor: pointer;
+            border-bottom: 1px solid
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-content {
+            margin-top: 24px;
+            display: none;
+        }
+
+        .filter-container {
+            width: 95%;
+            height: 100px;
+        }
+
+        .price-input {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .separator {
+            font-size: 20px;
+            color: #888;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            margin-right: 20px;
+        }
+
+        .field {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .field span {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: -0.005em;
+            text-align: left;
+            color: #A7A7A7;
+
+        }
+
+        input[type="number"] {
+            width: 106px;
+            height: 40px;
+            margin-top: 8px;
+            border-radius: 3px;
+            border: 0.5px solid #9F9F9F;
+            color: #000000;
+        }
+
+        .slider {
+            height: 5px;
+            position: relative;
+
+        }
+
+        .range-input {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #007bff;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-top: 12px;
+        }
+
+        input[type="range"] {
+            /*Barları yok eder.*/
+            appearance: none;
+            width: 100%;
+            height: 5px;
+            background-color: transparent;
+            /*Eventlere tepki verip vermeyeceği*/
+            pointer-events: none;
+            position: absolute;
+        }
+
+        /*slider ögesinin sürgü kısmını özelleştirmek için*/
+        input[type="range"]::-webkit-slider-thumb {
+            /*Tarayıcının varsayılan stilini kaldırarak özelleştirmeyi sağlar.*/
+            appearance: none;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background-color: #000;
+            cursor: pointer;
+            pointer-events: auto;
+            position: relative;
+
+        }
+
+        .brand-container {
+            width: 95%;
+            height: 408px;
+            margin-left: 16px;
+        }
+
+        .brand-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: 0.03em;
+            text-align: left;
+            color: #000000;
+            cursor: pointer;
+            border-bottom: 1px solid;
+
+
+
+        }
+
+        .text-input {
+            width: 90%;
+            height: 40px;
+            background-color: #F5F5F5;
+            border: 8px;
+            margin-top: 24px;
+            margin-left: 16px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+            text-align: left;
+            color: #656565;
+        }
+
+        .checkbox {
+            width: 90%;
+            height: 280px;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 24px;
+            text-align: left;
+        }
+
+        .memory-container {
+            width: 95%;
+            height: 328px;
+            margin-left: 16px;
+        }
+
+        .memory-header {
+            width: 100%;
+            height: 48px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: 0.03em;
+            text-align: left;
+            color: #000000;
+            cursor: pointer;
+            border-bottom: 1px solid;
+
+        }
+
+        .protection-container {
+            width: 95%;
+            height: 48px;
+            margin-left: 16px;
+        }
+
+        .protection-header {
+            width: 100%;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: 0.03em;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            color: #000000;
+            cursor: pointer;
+            border-bottom: 1px solid;
+
+        }
+
+        .apply {
+            width: 95%;
+            height: 48px;
+            margin-left: 16px;
+            background-color: #000000;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 24px;
+            text-align: center;
+            border-radius: 8px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="Logo.png" alt="">
+        </div>
+        <div class="menu">
+            <img src="Burger.png" alt="">
+        </div>
+    </div>
+    <div class="back">
+        <button class="arrow">
+            <img src="Arrow.png">
+        </button>
+        <p>Filters</p>
+    </div>
+    <div class="dropdown-container">
+        <div class="dropdown-header" id="dropdownHeader">
+            <span>Price</span>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="dropdown-content" id="dropdownContent">
+            <div class="filter-container">
+                <div class="price-input">
+                    <div class="field">
+                        <span>From</span>
+                        <input type="number" class="input-min" value="0">
+                    </div>
+                    <div class="separator">-</div>
+                    <div class="field">
+                        <Span>To</Span>
+                        <input type="number" class="input-max" value="10000">
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="progress">
+                    </div>
+                </div>
+                <div class="range-input">
+                    <input type="range" class="range-min" min="0" max="10000" value="0" step="100">
+                    <input type="range" class="range-max" min="0" max="10000" value="10000" step="100">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brand-container">
+        <div class="brand-header">
+            <span>Brand</span>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="brand-content">
+            <input type="text" class="text-input" value="Search">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" class="appleToggle">
+                    <span>Apple</span>
+                </label>
+                <label>
+                    <input type="checkbox" class="samsungToggle">
+                    <span>Samsung</span>
+                </label>
+                <label>
+                    <input type="checkbox" class="xiaomiToggle">
+                    <span>Xiaomi</span>
+                </label>
+                <label>
+                    <input type="checkbox" class="oppoToggle">
+                    <span>OPPO</span>
+                </label>
+            </div>
+        </div>
+
+    </div>
+    <div class="memory-container">
+        <div class="memory-header">
+            <span>Built-in memory</span>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="memory-content">
+            <input type="text" class="text-input" value="Search">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">
+                    <span>16GB</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span>32GB</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span>64GB</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span>128GB</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span>256GB</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span>512GB</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="protection-container">
+        <div class="protection-header">
+            <span>Protection class</span>
+            <span class="arrow">▼</span>
+        </div>
+    </div>
+    <div class="protection-container">
+        <div class="protection-header">
+            <span>Screen diagonal</span>
+            <span class="arrow">▼</span>
+        </div>
+    </div>
+    <div class="protection-container">
+        <div class="protection-header">
+            <span>Screen type</span>
+            <span class="arrow">▼</span>
+        </div>
+    </div>
+    <div class="protection-container">
+        <div class="protection-header">
+            <span>Battery capacity</span>
+            <span class="arrow">▼</span>
+        </div>
+    </div>
+
+    <div class="apply-button">
+        <button class="apply">Apply</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="product-detail.html" id="link">Link</a>
+    <script>
+        const link = document.querySelector("#link");
+        link.addEventListener("click", function () {
+            //Mevcut URL alma
+            let url = window.location.href;
+
+            //URL'e id parametresi atayacağız
+            let id = "?id=1";
+            let fullUrl = url + id;
+            //Linki product-detail sayfasına yönlendirip sonuna da id'yi ekeldik.
+            link.href = "product-detail.html" + id;
+        })
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
